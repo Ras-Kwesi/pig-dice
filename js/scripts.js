@@ -38,9 +38,9 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
         
     });
 
-    $("#P1roll").click(function(event){
-        var p1number= throwdice();
-        $("#P1score").text(p1number);
+    $("#P2roll").click(function(event){
+        var p2number= throwdice();
+        $("#P2score").text(p2snumber);
         
     });
 
