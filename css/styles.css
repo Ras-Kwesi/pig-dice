@@ -1,0 +1,16 @@
+#player1name::placeholder {
+    color: blue
+}
+
+#player2name::placeholder {
+    color: rgb(255, 0, 0)
+}
+
+::placeholder {
+    color: red;
+    opacity: 1; 
+}
+
+#startbutton {
+    margin: 20px;
+}
