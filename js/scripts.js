@@ -1,18 +1,26 @@
 // Business Logic
-function Player(name,score,total) {
+function Player(name,score,total) {  //Constructor for both players
     this.name=name
     this.score=score
     this.total=total
 }; 
 
-var throwdice = function() {
-    return Math.floor(6 * Math.random()) + 1;
+var throwdice = function RandomInt(max) { // Produce a random number representative of a thrown dice
+    return Math.floor(Math.random() * Math.floor(6));
 }
 
-Player.prototype.currentrole = function() {
+
+//var currentdice = function () {
+    //return throwdice +=
+//}
+
+Player.prototype.currentrole = function() {  //The new random number
     return throwdice()
 }
 
+var Player1 = new Player()
+var Player2 = new Player()
+ 
 // User Interface Logic
 $(document).ready(function(){  // jquery to run after the html is fully ran
     $("#startbutton").click(function(event){ //jQuery to hold values submitted when button is clicked
@@ -27,11 +35,11 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
         $(".intro").hide();
     })
 
-    $("#P1roll").click(event) {
+    $("#P1roll").click(function(event){
         var p1number= throwdice();
         $("#P1score").text(p1number);
-        var p1all= 
-    }
+        
+    });
 
-   
+   alert(RandomInt())
 })
