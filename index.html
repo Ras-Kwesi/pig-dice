@@ -11,30 +11,32 @@
       <title>PIG DICE</title>
     </head>
     <body>
-        <h1 class="header">Let's Play Pig Dice</h1>
-        <div class="rules">
-            <p1>Welcome to pig dice, a 2-player highly interactive game.</p1>
-            <p1>It takes two to tango, also does it on pig-dice. But first before we dance, this are the rules of engagement :</p1>
-            <ol1>
-                <li>Each player has a turn to role their dice,one turn has three plays, after which it's the other players turn</li>
-                <li>You can role from the numbers <strong>1</strong> to <strong>6</strong>.</li>
-                <li>Every play score between <strong>2</strong> to <strong>6</strong> will be added to your turn score which is a total of <em>three plays</em></li>
-                <li>A play score of <strong>1</strong> ends your turn and results to a <em>Nil</em></li>
-            </ol1>
-            <h2>The biggest risk not taking risks! Good luck and trust your insticts.</h2>
-        </div>
-        
-        <form>
-            <div class="form-row">
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Player One" id="player1name">
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Player Two" id="player2name">
-              </div>
+        <div class="intro">
+            <h1 class="header">Let's Play Pig Dice</h1>
+            <div class="rules">
+                <p1>Welcome to pig dice, a 2-player highly interactive game.</p1>
+                <p1>It takes two to tango, also does it on pig-dice. But first before we dance, this are the rules of engagement :</p1>
+                <ol1>
+                    <li>Each player has a turn to role their dice,one turn has three plays, after which it's the other players turn</li>
+                    <li>You can role from the numbers <strong>1</strong> to <strong>6</strong>.</li>
+                    <li>Every play score between <strong>2</strong> to <strong>6</strong> will be added to your turn score which is a total of <em>three plays</em></li>
+                    <li>A play score of <strong>1</strong> ends your turn and results to a <em>Nil</em></li>
+                </ol1>
+                <h2>The biggest risk not taking risks! Good luck and trust your insticts.</h2>
             </div>
-        </form>
-        <button type="click" class="btn btn-success"  id="startbutton" >Shall we begin!</button>
+            
+            <form>
+                <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Player One" id="player1name">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Player Two" id="player2name">
+                </div>
+                </div>
+            </form>
+            <button type="click" class="btn btn-success"  id="startbutton" >Shall we begin!</button>
+        </div>
 
         <div class="gamepagetop">
             <div class="container">
@@ -45,8 +47,8 @@
                                 <div class="card-body">
                                     <h3 id="P1name"></h3>
                                     <p3 id="P1score">122</p3>
-                                    <button type="submit" class="btn btn-primary">Let's Roll</button>
-                                    <button type="submit" class="btn btn-dark">Hold</button>
+                                    <button type="submit" class="btn btn-primary" id="P1roll">Let's Roll</button>
+                                    <button type="submit" class="btn btn-dark" id="P1hold">Hold</button>
                                 </div>
                             </div>
                         </div>
@@ -59,10 +61,10 @@
                         <div class="card">
                             <div class="jumbotron" id="P1Jum">
                                 <div class="card-body">
-                                    <h3 id="P2name">Jess</h3>
+                                    <h3 id="P2name"></h3>
                                     <p3 id="P2score">150</p3>
-                                    <button type="submit" class="btn btn-danger">Let's Roll</button>
-                                    <button type="submit" class="btn btn-dark">hold</button>
+                                    <button type="submit" class="btn btn-danger" id="P2roll">Let's Roll</button>
+                                    <button type="submit" class="btn btn-dark" id="P2hold">hold</button>
                                 </div>
                             </div>
                         </div>
