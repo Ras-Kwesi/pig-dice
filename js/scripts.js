@@ -6,13 +6,10 @@ function Player(name,score,total) {  //Constructor for both players
 }; 
 
 var throwdice = function RandomInt(max) { // Produce a random number representative of a thrown dice
-    return Math.floor(Math.random() * Math.floor(6));
+    return Math.floor(6 * Math.random()) + 1;
 }
 
 
-//var currentdice = function () {
-    //return throwdice +=
-//}
 
 Player.prototype.currentrole = function() {  //The new random number
     return throwdice()
@@ -41,5 +38,11 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
         
     });
 
-   alert(RandomInt())
+    $("#P1roll").click(function(event){
+        var p1number= throwdice();
+        $("#P1score").text(p1number);
+        
+    });
+
+   alert(throwdice())
 })
