@@ -13,6 +13,8 @@
 
 #startbutton {
     margin: 20px;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 28px;
 }
 
 .gamepagetop {
@@ -26,6 +28,9 @@
 
 .header {
     font-family: 'Noto Serif', serif;
+    text-align: center;
+    color: white;
+    text-shadow: 40px;
 }
 
 .rules {
@@ -72,4 +77,14 @@ h4 {
     font-family: 'Rajdhani', sans-serif;
     font-size: 40px; 
     color: rgb(252, 253, 255);
+    text-decoration-line: underline;
+}
+
+.rules {
+    padding-left: 18px;
+    font-size: 30px;
+}
+.btn {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 28px;
 }
