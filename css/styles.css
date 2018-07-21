@@ -15,10 +15,15 @@
     margin: 20px;
 }
 
-body {
-    background-image: url()
-}
-
 .gamepagetop {
     display: none;
+    background-color: mediumspringgreen;
+}
+
+.intro {
+    background-color: gold;
+}
+
+.header {
+    font-family: 'Noto Serif', serif;
 }
