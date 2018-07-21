@@ -40,13 +40,15 @@
     color: mediumblue;
     background-color: turquoise !important;
     font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
 }
 
 #P2Jum {
     color: gold;
     background-color: rgb(241, 15, 15) !important;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px
 }
-
 .btn {
     width: 240px;
 }
