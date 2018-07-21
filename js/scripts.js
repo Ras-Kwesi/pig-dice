@@ -20,7 +20,8 @@ Player.prototype.newturnscore = function () {
 Player.prototype.turnscore = function (){
     if (this.score === 1) {
         this.turn ===0; 
-        alert("Oops, you rolled a 1, better luck next round!")
+        alert("Oops, you rolled a 1, better luck next round! Click hold to see you point total")
+        alert("On to the next Player")
     }
     else {
         this.turn += this.score;
@@ -37,14 +38,6 @@ Player.prototype.storedturnscore = function() {  //The holds total of the turn t
 }
 
 
-Player.prototype.totalscore = function() {  //The total score of the Player
-    if (this.turnscore >= 1) {
-        this.total += this.turn;
-    }
-    else {
-        this.total = this.turn =+ 0;
-    }
-}
 
 Player.prototype.totalscore = function() {  //The total score of the Player
     if (this.turnscore ===0) {
@@ -55,6 +48,11 @@ Player.prototype.totalscore = function() {  //The total score of the Player
     }
 }
 
+Player.prototype.champion = function (){
+    if (this.total >=100) {
+        alert("Congratulations, you have won the game!!")
+    }
+}
 
 var Player1 = new Player(0,0,0)
 var Player2 = new Player(0,0,0)
@@ -114,11 +112,13 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
     });
     
     $("#P2hold").click(function(event) {
-        Player1.totalscore()
+        Player2.totalscore()
         
         alert(Player2.total)
 
         $("#P2return").text(Player2.total);
+
+        Player2.newturnscore()
     });
 
 })
