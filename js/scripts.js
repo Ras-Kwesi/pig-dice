@@ -13,6 +13,9 @@ var throwdice = function randomnum(max) { // Produce a random number representat
 
 
 //The score of the current play number per player
+Player.prototype.newturnscore = function () {
+    return this.turn = 0;
+}
 
 Player.prototype.turnscore = function (){
     if (this.score === 1) {
@@ -35,15 +38,22 @@ Player.prototype.storedturnscore = function() {  //The holds total of the turn t
 
 
 Player.prototype.totalscore = function() {  //The total score of the Player
-    if (this.turnscore > 0) {
+    if (this.turnscore >= 1) {
         this.total += this.turn;
     }
     else {
-        this.total = this.total =+ 0;
+        this.total = this.turn =+ 0;
     }
 }
 
-
+Player.prototype.totalscore = function() {  //The total score of the Player
+    if (this.turnscore ===0) {
+        this.total= this.turn + 0;
+    }
+    else {
+        this.total += this.turn;
+    }
+}
 
 
 var Player1 = new Player(0,0,0)
@@ -85,9 +95,11 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
     $("#P1hold").click(function(event) {
         Player1.totalscore()
         
-        console.log(Player1.total)
+        alert(Player1.total)
 
         $("#P1return").text(Player1.total);
+
+        Player1.newturnscore()
     });
 
 
@@ -104,7 +116,7 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
     $("#P2hold").click(function(event) {
         Player1.totalscore()
         
-        console.log(Player2.total)
+        alert(Player2.total)
 
         $("#P2return").text(Player2.total);
     });
