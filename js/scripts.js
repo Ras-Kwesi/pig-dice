@@ -1,22 +1,40 @@
 // Business Logic
-function Player(name,score,total) {  //Constructor for both players
-    this.name=name
+function Player(score,turn,total) {  //Constructor for both players
     this.score=score
+    this.turn=turn
     this.total=total
 }; 
 
-var throwdice = function RandomInt(max) { // Produce a random number representative of a thrown dice
+var throwdice = function randomnum(max) { // Produce a random number representative of a thrown dice
     return Math.floor(6 * Math.random()) + 1;
 }
 
 
 
-Player.prototype.currentrole = function() {  //The new random number
-    return throwdice()
+
+
+
+
+//this.turn += this.score   //The score of the current play number per player
+
+Player.prototype.turnscore = function (){
+    if (this.score === 1) {
+        this.turn ===0;
+        alert("Oops, you rolled a 1, better luck next round!")
+    }
+    else {
+        this.turn += this.score;
+    }
 }
 
-var Player1 = new Player()
-var Player2 = new Player()
+
+Player.prototype.totalscore = function() {  //The total score of the Player
+    return this.turnscore + this.total
+}
+
+
+var Player1 = new Player(0,0,0)
+var Player2 = new Player(0,0,0)
  
 // User Interface Logic
 $(document).ready(function(){  // jquery to run after the html is fully ran
@@ -25,16 +43,24 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
         var playerOne = $("#player1name").val() // Reasign Player Names to new var
         var playerTwo = $("#player2name").val() 
 
-        $("#P1name").text(playerOne)
+        $("#P1name").text(playerOne) // Display Player names at the HTML selesctor position
         $("#P2name").text(playerTwo)
 
-        $(".intro").hide();
-        $(".gamepagetop").show();
+        $(".intro").hide();  // Hides introduction
+        $(".gamepagetop").show(); // Displays Console
     })
 
-    $("#P1roll").click(function(event){
-        var p1number= throwdice();
-        $("#P1score").text(p1number);
+    $("#P1roll").click(function(event){ 
+        Player1.score = throwdice()
+        
+         
+        
+        $("#P1score").text(Player1.score);
+
+        //var p1turnstring = parseInt(p1number) + throwdice()
+        Player1.turnscore()
+    
+        $("#P1turn").text(Player1.turn);
         
     });
 
