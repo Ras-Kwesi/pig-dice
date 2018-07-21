@@ -27,3 +27,26 @@
 .header {
     font-family: 'Noto Serif', serif;
 }
+
+.rules {
+    font-family: 'Philosopher', sans-serif;
+}
+
+#P1Jum {
+    color: mediumblue;
+    background-color: turquoise !important;
+}
+
+#P2Jum {
+    color: gold;
+    background-color: rgb(241, 15, 15) !important;
+}
+
+.btn {
+    width: 200px;
+}
+
+.card {
+    width: 100%;
+    text-align: center;
+}
