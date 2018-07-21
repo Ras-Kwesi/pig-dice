@@ -2,6 +2,9 @@
 
 This is the individual project, Pig-Dice.
 
+## Author
+#### Kwesi Makonnen
+
 ## The Pig-Dice Game
 
 The page runs a game named Pig-Dice that is played amongst two players.
