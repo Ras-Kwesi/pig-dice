@@ -30,6 +30,7 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
         $("#P2name").text(playerTwo)
 
         $(".intro").hide();
+        $(".gamepagetop").show();
     })
 
     $("#P1roll").click(function(event){
@@ -40,9 +41,9 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
 
     $("#P2roll").click(function(event){
         var p2number= throwdice();
-        $("#P2score").text(p2snumber);
+        $("#P2score").text(p2number);
         
     });
+    
 
-   alert(throwdice())
 })
