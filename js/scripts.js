@@ -16,7 +16,7 @@ var throwdice = function randomnum(max) { // Produce a random number representat
 
 Player.prototype.turnscore = function (){
     if (this.score === 1) {
-        this.turn ===0;
+        this.turn ===0; 
         alert("Oops, you rolled a 1, better luck next round!")
     }
     else {
@@ -24,15 +24,26 @@ Player.prototype.turnscore = function (){
     }
 }
 
-
-Player.prototype.totalscore = function() {  //The total score of the Player
-    if (this.turnscore ===1) {
-        this.total=0;
+Player.prototype.storedturnscore = function() {  //The holds total of the turn that may or may not be added to total value
+    if (this.turn ===0) {
+        this.turnscore=0;
     }
     else {
-        this.total += this.turn;
+        this.turnscore += this.turn;
     }
 }
+
+
+Player.prototype.totalscore = function() {  //The total score of the Player
+    if (this.turnscore > 0) {
+        this.total += this.turn;
+    }
+    else {
+        this.total = this.total =+ 0;
+    }
+}
+
+
 
 
 var Player1 = new Player(0,0,0)
@@ -63,6 +74,8 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
         Player1.turnscore()
     
         $("#P1turn").text(Player1.turn);
+
+        console.log(Player1.turn)
         
         
         
@@ -88,5 +101,12 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
         $("#P2turn").text(Player2.turn );
     });
     
+    $("#P2hold").click(function(event) {
+        Player1.totalscore()
+        
+        console.log(Player2.total)
+
+        $("#P2return").text(Player2.total);
+    });
 
 })
