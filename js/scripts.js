@@ -12,10 +12,7 @@ var throwdice = function randomnum(max) { // Produce a random number representat
 
 
 
-
-
-
-//this.turn += this.score   //The score of the current play number per player
+//The score of the current play number per player
 
 Player.prototype.turnscore = function (){
     if (this.score === 1) {
@@ -29,7 +26,12 @@ Player.prototype.turnscore = function (){
 
 
 Player.prototype.totalscore = function() {  //The total score of the Player
-    return this.turnscore + this.total
+    if (this.turnscore ===1) {
+        this.total=0;
+    }
+    else {
+        this.total += this.turn;
+    }
 }
 
 
@@ -62,12 +64,28 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
     
         $("#P1turn").text(Player1.turn);
         
+        
+        
     });
 
-    $("#P2roll").click(function(event){
-        var p2number= throwdice();
-        $("#P2score").text(p2number);
+    
+    $("#P1hold").click(function(event) {
+        Player1.totalscore()
         
+        console.log(Player1.total)
+
+        $("#P1return").text(Player1.total);
+    });
+
+
+    $("#P2roll").click(function(event){
+        Player2.score= throwdice();
+        $("#P2score").text(Player2.score);
+        
+
+        Player2.turnscore()
+    
+        $("#P2turn").text(Player2.turn );
     });
     
 
