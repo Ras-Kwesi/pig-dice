@@ -9,12 +9,19 @@ var throwDice = function randomNum(max) { // Produce a random number representat
     return Math.floor(6 * Math.random()) + 1;
 }
 
+Player.prototype.diceScore = function () {
+    return this.score = throwDice()
+}
 
 
 
 //The score of the current play number per player
 Player.prototype.newTurnScore = function () {
     return this.turn = 0;
+}
+
+Player.prototype.newStoredScore = function () {
+    return this.turnScore = 0;
 }
 
 Player.prototype.turnScore = function (){
@@ -30,7 +37,7 @@ Player.prototype.turnScore = function (){
 
 Player.prototype.storedTurnScore = function() {  //The holds total of the turn that may or may not be added to total value
     if (this.turn ===0) {
-        this.turnscore=0;
+        this.turnScore=0;
     }
     else {
         this.turnScore += this.turn;
@@ -40,8 +47,8 @@ Player.prototype.storedTurnScore = function() {  //The holds total of the turn t
 
 
 Player.prototype.totalScore = function() {  //The total score of the Player
-    if (this.turnScore ===0) {
-        this.total= this.turn + 0;
+    if (this.storedTurnScore ===0) {
+        this.total= 0;
     }
     else {
         this.total += this.turn;
@@ -72,7 +79,7 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
     })
 
     $("#P1roll").click(function(event){ 
-        Player1.score = throwDice()
+        Player1.diceScore()
         
          
         
@@ -98,11 +105,12 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
         $("#P1return").text(Player1.total);
 
         Player1.newTurnScore()
+        Player2.newStoredScore()
     });
 
 
     $("#P2roll").click(function(event){
-        Player2.score= throwDice();
+        Player2.diceScore();
         $("#P2score").text(Player2.score);
         
 
@@ -119,6 +127,7 @@ $(document).ready(function(){  // jquery to run after the html is fully ran
         $("#P2return").text(Player2.total);
 
         Player2.newTurnScore()
+        Player2.newStoredScore()
     });
 
 })
