@@ -15,11 +15,13 @@
     margin: 20px;
     font-family: 'Philosopher', sans-serif;
     font-size: 28px;
+    color: gold;
+    background-color: #fff;
 }
 
 .gamepagetop {
     display: none;
-    background-color: mediumspringgreen;
+    background-color: gold;
 }
 
 .intro {
@@ -42,8 +44,8 @@
 }
 
 #P1Jum {
-    color: mediumblue;
-    background-color: turquoise !important;
+    color: gold;;
+    background-color: blue !important;
     font-family: 'Rajdhani', sans-serif;
     font-size: 28px;
 }
@@ -87,4 +89,9 @@ h4 {
 .btn {
     font-family: 'Philosopher', sans-serif;
     font-size: 28px;
+}
+
+#P2roll {
+    background-color: rgb(241, 15, 15);
+    color: rgb(252, 253, 255);
 }
