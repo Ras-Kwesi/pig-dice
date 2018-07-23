@@ -1,0 +1,97 @@
+#player1name::placeholder {
+    color: blue
+}
+
+#player2name::placeholder {
+    color: rgb(255, 0, 0)
+}
+
+::placeholder {
+    color: red;
+    opacity: 1; 
+}
+
+#startbutton {
+    margin: 20px;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 28px;
+    color: gold;
+    background-color: #fff;
+}
+
+.gamepagetop {
+    display: none;
+    background-color: gold;
+}
+
+.intro {
+    background-color: gold;
+}
+
+.header {
+    font-family: 'Noto Serif', serif;
+    text-align: center;
+    color: white;
+    text-shadow: 40px;
+}
+
+.rules {
+    font-family: 'Philosopher', sans-serif;
+}
+
+.jumbotron {
+    height: 380px;
+}
+
+#P1Jum {
+    color: gold;;
+    background-color: blue !important;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+}
+
+#P2Jum {
+    color: gold;
+    background-color: rgb(241, 15, 15) !important;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px
+}
+.btn {
+    width: 240px;
+}
+
+.card {
+    width: 100%;
+    text-align: center;
+    height: 420px;
+}
+
+h5 {
+    text-align: center;
+    font-family: 'Noto Serif', serif;
+    font-size: 40px; 
+    color: rgb(0, 132, 255);
+}
+
+
+h4 {
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 40px; 
+    color: rgb(252, 253, 255);
+    text-decoration-line: underline;
+}
+
+.rules {
+    padding-left: 18px;
+    font-size: 30px;
+}
+.btn {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 28px;
+}
+
+#P2roll {
+    background-color: rgb(241, 15, 15);
+    color: rgb(252, 253, 255);
+}
